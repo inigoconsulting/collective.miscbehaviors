@@ -10,7 +10,7 @@ from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
 from collective.miscbehaviors import _
-from collective.miscbehaviors.behaviors.utils import context_property
+from collective.miscbehaviors.behavior.utils import context_property
 
 import urlparse
 from urllib import quote
@@ -24,7 +24,7 @@ class IRemoteURL(form.Schema):
 
     remoteUrl = schema.TextLine(
         title=_(u"Link"),
-        default='http://',
+        default=u'http://',
         description=u"",
         required=False,
     )
@@ -47,7 +47,7 @@ class RemoteURL(object):
     # -*- Your behavior property setters & getters here ... -*-
     def _setRemoteUrl(self, value):
         if value:
-            value = urlparse.urlunparse(urlparse.urlparse(value)):
+            value = urlparse.urlunparse(urlparse.urlparse(value))
         self.context.remoteUrl = value
 
     def _getRemoteUrl(self):

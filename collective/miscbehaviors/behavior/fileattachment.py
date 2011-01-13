@@ -6,11 +6,10 @@ from plone.dexterity.interfaces import IDexterityContent
 from plone.autoform.interfaces import IFormFieldProvider
 
 from plone.namedfile import field as namedfile
-from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
 from collective.miscbehaviors import _
-from collective.miscbehaviors.behaviors.utils import context_property
+from collective.miscbehaviors.behavior.utils import context_property
 
 class IFileAttachment(form.Schema):
     """
@@ -19,7 +18,7 @@ class IFileAttachment(form.Schema):
    
     # -*- Your Zope schema definitions here ... -*-
 
-    file = namedfile.NamedFile(
+    file = namedfile.NamedBlobFile(
         title=_(u"File Attachment"),
         description=u"",
         required=False,

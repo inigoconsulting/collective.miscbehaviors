@@ -10,7 +10,7 @@ from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
 from collective.miscbehaviors import _
-from collective.miscbehaviors.behaviors.utils import context_property
+from collective.miscbehaviors.behavior.utils import context_property
 
 class IBodyText(form.Schema):
     """

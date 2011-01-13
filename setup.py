@@ -27,6 +27,7 @@ setup(name='collective.miscbehaviors',
           'setuptools',
           'plone.app.dexterity',
           'collective.autopermission',
+          'plone.namedfile[blobs]'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
