@@ -8,6 +8,7 @@ from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile import field as namedfile
 from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
+from collective.miscbehaviors.behavior.utils import context_property
 
 from collective.miscbehaviors import _
 
@@ -42,15 +43,6 @@ class IContactInfo(form.Schema):
 
 
 alsoProvides(IContactInfo,IFormFieldProvider)
-
-def context_property(name):
-    def getter(self):
-        return getattr(self.context, name)
-    def setter(self, value):
-        setattr(self.context, name, value)
-    def deleter(self):
-        delattr(self.context, name)
-    return property(getter, setter, deleter)
 
 class ContactInfo(object):
     """
