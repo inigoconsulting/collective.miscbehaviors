@@ -20,13 +20,13 @@ class ILeadImage(form.Schema):
     # -*- Your Zope schema definitions here ... -*-
 
     image = namedfile.NamedBlobImage(
-        title=_(u"Image"),
+        title=_(u"Lead Image"),
         description=u"",
         required=False,
     )
 
     imageCaption = schema.TextLine(
-        title=_(u"Image Caption"),
+        title=_(u"Lead Image Caption"),
         description=u"",
         required=False,
     )
