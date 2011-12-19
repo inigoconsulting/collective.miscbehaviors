@@ -48,6 +48,8 @@ class Renderer(base.Renderer):
 
     @property
     def available(self):
-        if ILeadImage.providedBy(self.context):
-            return True
-        return False
+        if not ILeadImage.providedBy(self.context):
+            return False
+        if not getattr(self.context, 'image'):
+            return False
+        return True
