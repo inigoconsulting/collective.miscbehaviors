@@ -4,7 +4,6 @@
         addview="collective.miscbehaviors.imageportlet"
         title="Lead Image Behavior Portlet" 
         description="This portlet displays lead image of content">
-        <for interface="plone.app.portlets.interfaces.IRightColumn" />
     </portlet>
 </portlets>
 
