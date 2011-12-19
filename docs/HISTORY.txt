@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.2dev
+-------------------
+
+* Added leadimage portlet
+* Enable behavior marker interfaces
+
 0.1 
 -------------------
 

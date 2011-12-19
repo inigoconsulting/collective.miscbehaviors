@@ -15,6 +15,7 @@
         provides=".contactinfo.IContactInfo"
         factory=".contactinfo.ContactInfo"
         for="plone.dexterity.interfaces.IDexterityContent"
+        marker=".contactinfo.IContactInfo"
         />
 
 
@@ -24,6 +25,7 @@
         provides=".remoteurl.IRemoteURL"
         factory=".remoteurl.RemoteURL"
         for="plone.dexterity.interfaces.IDexterityContent"
+        marker=".remoteurl.IRemoteURL"
         />
 
 
@@ -34,6 +36,7 @@
         provides=".fileattachment.IFileAttachment"
         factory=".fileattachment.FileAttachment"
         for="plone.dexterity.interfaces.IDexterityContent"
+        marker=".fileattachment.IFileAttachment"
         />
 
 
@@ -44,6 +47,7 @@
         provides=".leadimage.ILeadImage"
         factory=".leadimage.LeadImage"
         for="plone.dexterity.interfaces.IDexterityContent"
+        marker=".leadimage.ILeadImage"
         />
 
 
@@ -53,6 +57,7 @@
         provides=".bodytext.IBodyText"
         factory=".bodytext.BodyText"
         for="plone.dexterity.interfaces.IDexterityContent"
+        marker=".bodytext.IBodyText"
         />
 
 

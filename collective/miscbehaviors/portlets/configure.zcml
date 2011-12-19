@@ -1,0 +1,17 @@
+<configure
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
+    <include package="plone.app.portlets"/>
+
+    <plone:portlet
+        name="collective.miscbehaviors.imageportlet"
+        interface=".imageportlet.IImagePortlet"
+        assignment=".imageportlet.Assignment"
+        renderer=".imageportlet.Renderer"
+        addview=".imageportlet.AddForm"
+        editview=".imageportlet.EditForm"
+        />
+
+</configure>
+
