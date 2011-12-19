@@ -1,15 +1,22 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
      xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-     class="leadimagebehaviorportlet">
+     class="leadimagebehaviorportlet"
+     tal:define="uid view/uid;">
 
+     <a tal:attributes="href string:${context/absolute_url}/@@images/image;
+                        id uid">
 <img tal:define="scales context/@@images;
                 width view/data/width;
                 height view/data/height;
+
                  thumbnail python: scales.scale('image', width=width, height=height);"
      tal:condition="thumbnail"
      tal:attributes="src thumbnail/url;
                      width thumbnail/width;
-                     height thumbnail/height" />
+                     height thumbnail/height;"/>
 
+      </a>
+   <script tal:content="python:view.script(uid)">
+   </script>
 </div>

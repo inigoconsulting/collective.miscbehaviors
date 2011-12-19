@@ -7,10 +7,14 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from zope import schema
 from collective.miscbehaviors.behavior.leadimage import ILeadImage
+import hashlib
+import random
 
 class IImagePortlet(IPortletDataProvider):
-    width = schema.Int(title=u'Width')
-    height = schema.Int(title=u'Height')
+    width = schema.Int(title=u'Width',
+            default=150)
+    height = schema.Int(title=u'Height',
+            default=150)
 
 
 class Assignment(base.Assignment):
@@ -53,3 +57,15 @@ class Renderer(base.Renderer):
         if not getattr(self.context, 'image'):
             return False
         return True
+
+    def uid(self):
+        return hashlib.md5(str(random.randint(11111,99999))).hexdigest()
+
+    def script(self, uid):
+        return '''
+            jQuery(document).ready(function () {
+                jQuery('#%(uid)s').prepOverlay({
+                    subtype: 'image'
+                });
+            });
+        ''' % dict(uid=uid)
