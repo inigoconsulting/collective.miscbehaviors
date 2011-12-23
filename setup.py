@@ -27,7 +27,8 @@ setup(name='collective.miscbehaviors',
           'setuptools',
           'plone.app.dexterity',
           'collective.autopermission',
-          'plone.namedfile[blobs]'
+          'plone.namedfile[blobs]',
+          'collective.dexteritytextindexer',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

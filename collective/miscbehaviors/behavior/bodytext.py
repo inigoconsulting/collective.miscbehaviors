@@ -12,6 +12,8 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 from collective.miscbehaviors import _
 from collective.miscbehaviors.behavior.utils import context_property
 
+from collective import dexteritytextindexer
+
 class IBodyText(form.Schema):
     """
         Marker/Form interface for Body Text
@@ -19,6 +21,7 @@ class IBodyText(form.Schema):
    
     # -*- Your Zope schema definitions here ... -*-
 
+    dexteritytextindexer.searchable('text')
     form.widget(text="plone.app.z3cform.wysiwyg.WysiwygFieldWidget")
     text = schema.Text(
         title=_(u'label_body_text', u"Body Text"),

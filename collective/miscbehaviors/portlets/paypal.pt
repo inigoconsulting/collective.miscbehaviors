@@ -1,0 +1,60 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     class="paypalbehaviorportlet">
+
+     <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" 
+        tal:attributes="value view/paypal_command"/>
+
+        <input type="hidden" name="business" 
+        tal:attributes="value context/paypal_email"/>
+        <input type="hidden" name="lc" value="US"/>
+        <input type="hidden" name="item_name" 
+        tal:attributes="value context/paypal_itemname"/>
+
+        <input type="hidden" 
+        tal:condition="context/paypal_itemnumber|nothing"
+        tal:attributes="value context/paypal_itemnumber"
+        name="item_number"/>
+
+        <input type="hidden" name="no_note" value="0"/>
+        <input type="hidden" name="currency_code" 
+        tal:attributes="value context/paypal_currency" />
+
+        <input 
+        tal:condition="python:getattr(context, 'paypal_amount', -1) != -1"
+        type="hidden" name="amount"
+         tal:attributes="value context/paypal_amount"/>
+
+        <input type="hidden" name="bn" 
+        tal:attributes="value view/paypal_bn" />
+
+
+        <tal:block condition="python: context.paypal_type != 'donation'">
+
+        <input type="hidden" name="button_subtype"
+        tal:condition="view/button_subtype"
+        tal:attributes="value view/button_subtype"/>
+
+        <input type="hidden" name="shipping"
+        tal:condition="context/paypal_shipping|nothing"
+        tal:attributes="value context/paypal_shipping"/>
+
+        <input type="hidden" name="tax_rate"
+        tal:condition="context/paypal_tax|nothing"
+        tal:attributes="value context/paypal_tax"/>
+
+        </tal:block>
+
+        <input type="image" 
+        style="width:auto;height:auto;"
+        tal:attributes="src view/image_url"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0"
+        name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+
+        <img alt="" border="0"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+     </form>
+
+  </div>

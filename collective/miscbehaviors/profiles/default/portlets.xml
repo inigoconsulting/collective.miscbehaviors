@@ -5,5 +5,12 @@
         title="Lead Image Behavior Portlet" 
         description="This portlet displays lead image of content">
     </portlet>
+
+    <portlet
+        addview="collective.miscbehaviors.paypalportlet"
+        title="PayPal Behavior Portlet" 
+        description="This portlet displays paypal button for content with paypalbehavior">
+    </portlet>
+
 </portlets>
 

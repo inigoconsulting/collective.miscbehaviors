@@ -60,6 +60,14 @@
         marker=".bodytext.IBodyText"
         />
 
+    <plone:behavior
+        title="PayPal"
+        description="Adds PayPal fields for PayPal button portlet"
+        provides=".paypal.IPayPal"
+        factory=".paypal.PayPal"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        marker=".paypal.IPayPal"
+        />
 
 </configure>
 

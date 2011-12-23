@@ -13,5 +13,14 @@
         editview=".imageportlet.EditForm"
         />
 
+    <plone:portlet
+        name="collective.miscbehaviors.paypalportlet"
+        interface=".paypal.IPayPalPortlet"
+        assignment=".paypal.Assignment"
+        renderer=".paypal.Renderer"
+        addview=".paypal.AddForm"
+        />
+
+
 </configure>
 
