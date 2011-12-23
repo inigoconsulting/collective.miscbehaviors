@@ -25,6 +25,8 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <adapter factory=".indexer.bodytext" name="SearchableText"/>
+
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>
