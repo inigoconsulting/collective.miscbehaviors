@@ -17,8 +17,21 @@ CURRENCIES=[
 
 class IPayPal(form.Schema):
 
+    form.fieldset('paypal',
+        label=_(u'Paypal'),
+        fields=['paypal_type',
+                'paypal_email',
+                'paypal_currency',
+                'paypal_itemname',
+                'paypal_itemnumber',
+                'paypal_amount',
+                'paypal_shipping',
+                'paypal_tax']
+    )
+
+
     paypal_type = schema.Choice(
-        title=_(u'PayPal: Button Type'),
+        title=_(u'Button Type'),
         values=[
             'donation',  
             'buynow'
@@ -27,43 +40,43 @@ class IPayPal(form.Schema):
     )
 
     paypal_email = schema.TextLine(
-        title=_(u'PayPal: Email'),
+        title=_(u'Email'),
         required=False,
     )
 
     paypal_currency = schema.Choice(
-        title=_(u'PayPal: Currency'),
+        title=_(u'Currency'),
         values=CURRENCIES,
         required=False,
         default='USD'
     )
 
     paypal_itemname = schema.TextLine(
-        title=_(u'PayPal: Item Name / Organization'),
+        title=_(u'Item Name / Organization'),
         required=False
     )
 
     paypal_itemnumber = schema.TextLine(
-        title=_(u'PayPal: Item Number / Donation ID'),
+        title=_(u'Item Number / Donation ID'),
         required=False
     )
 
     paypal_amount = schema.Float(
-        title=_(u'PayPal: Amount'),
+        title=_(u'Amount'),
         description=_(u'Enter the amount. Set to -1 to allow user to enter their own amount'),
         required=False,
         default=0.0
     )
 
     paypal_shipping = schema.Float(
-        title=_(u'PayPal: Shipping'),
+        title=_(u'Shipping'),
         description=_(u'Enter the shipping amount. Not needed for donation'),
         required=False,
         default=0.0
     )
 
     paypal_tax = schema.Float(
-        title=_(u'PayPal: Tax'),
+        title=_(u'Tax'),
         description=_(u'Enter the tax rate in %. Not needed for donation'),
         required=False,
         default=0.0
