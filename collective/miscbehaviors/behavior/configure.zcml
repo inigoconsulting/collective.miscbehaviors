@@ -69,5 +69,15 @@
         marker=".paypal.IPayPal"
         />
 
+    <plone:behavior
+        title="Start/End Dates"
+        description="Adds event start/end date fields"
+        provides=".startenddate.IStartEndDate"
+        factory=".startenddate.StartEndDate"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        marker=".startenddate.IStartEndDate"
+        />
+
+
 </configure>
 
