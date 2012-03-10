@@ -26,6 +26,8 @@
       />
 
   <adapter factory=".indexer.bodytext" name="SearchableText"/>
+  <adapter factory=".indexer.startDate" name="start"/>
+  <adapter factory=".indexer.endDate" name="end"/>
 
   <!-- -*- extra stuff goes here -*- -->
 
