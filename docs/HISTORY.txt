@@ -6,6 +6,8 @@ Changelog
 
 * Added leadimage portlet
 * Enable behavior marker interfaces
+* Added paypal behavior
+* Added startenddate behavior
 
 0.1 
 -------------------
