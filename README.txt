@@ -21,3 +21,9 @@ Remote URL
 
 Contact Info
   Adds contact name, contact email, and contact phone fields
+
+Paypal
+  Adds paypal related fields and allow assigning of paypal portlet
+
+StartEndDate
+  Adds startDate and endDate fields for events

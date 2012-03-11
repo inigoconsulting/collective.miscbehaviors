@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2dev
+0.2
 -------------------
 
 * Added leadimage portlet
