@@ -2,7 +2,12 @@ from plone.directives.form.schema import TEMP_KEY
 from collective.dexteritytextindexer.directives import SEARCHABLE_KEY
 
 def searchable(iface, field_name):
-    # mark a field in existing iface as searchable
+    """ 
+        mark a field in existing iface as searchable 
+
+        XXX: this really should go into upstream 
+             collective.dexteritytextindexer.directives
+    """
     store = iface.queryTaggedValue(SEARCHABLE_KEY)
     if store is None:
         store = []
