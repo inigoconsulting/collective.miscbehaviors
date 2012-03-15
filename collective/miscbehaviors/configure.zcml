@@ -25,7 +25,6 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-  <adapter factory=".indexer.bodytext" name="SearchableText"/>
   <adapter factory=".indexer.startDate" name="start"/>
   <adapter factory=".indexer.endDate" name="end"/>
 

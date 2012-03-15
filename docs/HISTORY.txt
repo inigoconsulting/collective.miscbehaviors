@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.2.1 
+-------------------
+
+* remove plone.indexer registration for bodytext, as it conflicts with 
+  dexteritytextindexer
+
 0.2
 -------------------
 
