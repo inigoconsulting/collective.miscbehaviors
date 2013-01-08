@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+    <!-- Custom viewlet -->
+    <browser:viewlet
+        name="collective.miscbehaviors.leadimage"
+        for="collective.miscbehaviors.behavior.leadimage.ILeadImage"
+        class=".leadimage.LeadImageViewlet"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        template="leadimage.pt"
+        permission="zope2.View"
+        />
+
+</configure>

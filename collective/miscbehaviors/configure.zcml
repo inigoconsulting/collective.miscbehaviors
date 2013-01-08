@@ -16,6 +16,7 @@
     <!-- Register an extension profile to make the product installable -->
   <include package=".behavior" />
   <include package=".portlets" />
+  <include package=".browser" />
 
   <genericsetup:registerProfile
       name="default"
